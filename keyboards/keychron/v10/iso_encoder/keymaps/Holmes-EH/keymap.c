@@ -28,11 +28,6 @@ enum custom_keycodes {
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     switch (keycode) {
-        case H_MAC5:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LGUI(SS_LCTL(SS_TAP(X_Q))));
-            }
-            return false;
         case H_MAC1:
             if (record->event.pressed) {
                 SEND_STRING(SS_LGUI(SS_LALT(SS_LCTL(SS_TAP(X_B)))));
@@ -89,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [MAC_BASE] = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
-    [MAC_FN]   = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI) },
+    [MAC_FN]   = { ENCODER_CCW_CW(RGB_MOD, RGB_MOD) },
     [WIN_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [WIN_FN]   = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI) }
 };
