@@ -20,6 +20,9 @@
 
 enum custom_keycodes {
     H_MAC1,
+    H_MAC2,
+    H_MAC3,
+    H_MAC4,
     H_MAC5,
 };
 
